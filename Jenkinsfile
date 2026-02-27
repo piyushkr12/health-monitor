@@ -11,7 +11,7 @@ pipeline{
             post{
                 success{
                     echo "========Image build successfully========"
-                    sh "docker images | grep log-analysis-pipeline"
+                    sh "docker images | grep health-monitor"
 
                 }
                 failure{
