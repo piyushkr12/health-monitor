@@ -54,6 +54,6 @@ app.get("/metrics", async (req, res) => {
 
 /* -------------------- Start Server -------------------- */
 
-app.listen(5000, () => {
+app.listen(5020, () => {
   console.log("Backend running on port 5000 🚀");
 });

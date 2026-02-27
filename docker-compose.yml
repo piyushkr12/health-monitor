@@ -4,7 +4,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: sudipta4docker/log-analysis:frontend
+    image: piyushkr11/health-monitor:frontend
     ports:
       - "3000:80"
 
@@ -12,22 +12,22 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    image: sudipta4docker/log-analysis:backend
+    image: piyushkr11/health-monitor:backend
     ports:
-      - "5000:5000"
+      - "5020:5020"
 
   ai-agent:
     build:
       context: ./ai-agent
       dockerfile: Dockerfile
-    image: sudipta4docker/log-analysis:ai-agent
+    image: piyushkr11/health-monitor:ai-agent
     ports:
       - "6000:6000"
 
   db:
     image: mongo:6
     volumes:
-      - ./log-analysis-data:/data/db
+      - ./health-monitor:/data/db
   prometheus:
     image: prom/prometheus
     ports:
